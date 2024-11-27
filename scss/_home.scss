@@ -1,0 +1,552 @@
+body {
+  font-family: "Plus Jakarta Sans";
+  font-size: 16px; // в браузері  і так встановлено 16px за замовчуванням, можна цього не писати
+  color: #5e6282;
+
+  .wrapper {
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+    overflow: clip; // приховує те що виходить за межі контейнера, не додає скрол
+
+    .header {
+      position: relative;
+      padding-top: 77px;
+      z-index: 50;
+
+      .header__container {
+        display: flex;
+        align-items: center;
+        gap: 125px;
+
+        .header__logo {
+          flex: 0 0 80px; //означає, що елемент матиме фіксовану ширину/висоту 80px (в залежності від flex-diretion),
+          //не буде розширюватися або зменшуватися під впливом інших елементів у flex-контейнері.
+          img {
+            max-width: 100%;
+          }
+        }
+
+        .header__menu.menu {
+          .menu__list {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 40px;
+
+            .menu__item {
+              .menu__link {
+                font-size: 14px;
+                font-weight: regular;
+                color: #9a9ea6;
+                text-shadow: 0 0 1px #fff;
+
+                &:hover {
+                  color: #4737ff;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
+    & > main {
+      // притиснули футер до низу
+      flex-grow: 1;
+
+      &.page {
+        .page__hero {
+          &.hero {
+            padding-top: 62px;
+            padding-bottom: 40px;
+            position: relative;
+            margin-bottom: 170px;
+
+            .hero__container {
+              display: flex;
+
+              &::after,
+              &::before {
+                content: "";
+                position: absolute;
+                bottom: 0;
+                background-color: #4475f2;
+                height: 150%;
+                box-shadow: 0 30px 60px 0 rgba(71, 74, 87, 0.25);
+                width: 200vw;
+                border-radius: 50px;
+                transform-origin: left bottom;
+              }
+
+              &::before {
+                left: calc(50% + 30px);
+
+                transform: skewX(-20deg); // зробило з квадрати трапецію
+                transform-origin: left bottom; //Це означає, що точка відліку для трансформацій буде в лівому нижньому куті елемента.
+                // Приклади використання:
+                // Обертання (rotate): Якщо до елемента застосовується transform: rotate(45deg);, то він буде обертатися навколо лівого нижнього кута, а не навколо свого центру.
+
+                // Масштабування (scale): При transform: scale(2);, елемент розширюється відносно лівого нижнього кута.
+
+                // Анімація: В анімаціях це дозволяє керувати рухом елементів так, щоб вони трансформувалися від заданої точки.
+              }
+
+              &::after {
+                left: calc(50% + 404px);
+
+                transform: skewX(31deg);
+              }
+
+              .hero__content {
+                flex: 0 1 50%;
+
+                &.content-hero {
+                  display: grid;
+                  align-content: start;
+                  gap: 30px;
+
+                  ////// По факту те саме що і вище
+                  // display: flex;
+                  // flex-direction: column;
+                  // gap: 30px;
+
+                  justify-items: start;
+
+                  .content__title {
+                    line-height: 117%; // 89/76*100
+                    font-size: 76px;
+                    font-weight: 800;
+                    letter-spacing: -4px;
+                    color: #181e4b;
+
+                    a {
+                      color: #4475f2;
+                      text-decoration: underline;
+                      text-shadow: 0 0 8px #fff;
+
+                      &:hover {
+                        text-decoration: none;
+                      }
+                    }
+                  }
+                  .content-hero__text {
+                    p {
+                      line-height: 187.5%; // 30/16 * 100%
+
+                      &:not(:last-child) {
+                        // застосуй ці стилі якщо тег р НЕ ОСТАННІЙ, поки він лише один, ну і відповідно він останній
+                        margin-bottom: 10px;
+                      }
+                    }
+                  }
+
+                  .content-hero__button {
+                    text-align: center;
+                    box-shadow: 0 30px 60px 0 rgba(68, 117, 242, 0.25);
+                    border-radius: 10px 10px 10px 10px;
+                    background-color: #4475f2;
+                    padding: 18px 54px;
+                    line-height: 156.25%; /* 25/16 */
+                    color: #fff;
+                    font-weight: 700;
+                    position: relative;
+                    top: 0;
+                    transition: all 0.3s;
+
+                    &:hover {
+                      top: 3px;
+                      box-shadow: 0 30px 60px 0 rgba(68, 117, 242, 0.5);
+                    }
+                  }
+                }
+              }
+
+              .hero__images {
+                flex: 0 1 50%;
+
+                &.images-hero {
+                  position: relative;
+                  z-index: 2;
+                  display: grid;
+                  grid-template-columns: repeat(3, 1fr);
+                  grid-template-rows: repeat(2, 1fr);
+                  gap: 27px;
+
+                  .images-hero__image {
+                    border-radius: 10px;
+                    box-shadow: 0 15px 30px 0 rgba(0, 0, 0, 0.25);
+                    max-width: 100%;
+                  }
+
+                  .images-hero__item.images-hero__item--01 {
+                    grid-row: span 2;
+                    align-self: end;
+                    padding-bottom: 10px;
+                  }
+
+                  .images-hero__item.images-hero__item--02 {
+                    // align-self: end;
+                    // justify-self: end;
+                  }
+
+                  .images-hero__item.images-hero__item--03 {
+                    align-self: center;
+                    justify-self: end;
+                    grid-row: span 2;
+                    padding-bottom: 10px;
+                  }
+
+                  .images-hero__item.images-hero__item--04 {
+                    align-self: end;
+                    justify-self: end;
+                  }
+                }
+              }
+            }
+          }
+        }
+
+        // FEATURES
+        .page__features.features {
+          margin-bottom: 200px;
+
+          .features__container {
+            .features__header-block.header-block {
+              .header-block__label {
+              }
+              .header-block__title {
+              }
+            }
+
+            .features__items {
+              display: flex;
+              gap: 20px;
+              justify-content: space-between;
+              flex-wrap: wrap;
+
+              .feature__item {
+                flex: 0 1 280px;
+                display: grid;
+                gap: 20px;
+                justify-items: center;
+                text-align: center;
+
+                .feature__icon {
+                  display: flex;
+                  justify-content: center;
+                  align-items: center;
+                  border-radius: 26px;
+                  background-color: #4475f2;
+                  height: 100px;
+                  width: 100px;
+                  box-shadow: 0 30px 60px 0 rgba(71, 74, 87, 0.25);
+
+                  img {
+                  }
+                }
+
+                .features__title {
+                  color: #000;
+                  font-size: 24px;
+                  font-weight: 700;
+                  letter-spacing: 0;
+                  line-height: 125%; /* 30/24 */
+                }
+                .feature__text {
+                  color: #5e6282;
+                  font-size: 16px;
+                  font-weight: 500;
+                  line-height: 30px;
+                  letter-spacing: 0;
+                }
+              }
+            }
+          }
+        }
+
+        // SERVICES
+
+        .page__services {
+          margin-bottom: 200px;
+
+          &.services {
+            .services__container {
+              .services-header-block {
+                &.header-block {
+                  .header-block__label {
+                  }
+                  .header-block__title {
+                  }
+                }
+              }
+
+              .services__items {
+                display: grid;
+                gap: 140px;
+
+                .services__item {
+                  display: flex;
+                  gap: 30px;
+                  flex-wrap: wrap;
+
+                  &:nth-child(odd) {
+                    // flex-direction: row-reverse;
+
+                    .services__content {
+                      .services__body {
+                        // margin: 0 0 0 auto;
+                      }
+                    }
+                  }
+
+                  .services__content {
+                    flex: 1 1 250px;
+
+                    .services__body {
+                      .services__title {
+                        color: #000;
+                        font-size: 32px;
+                        font-weight: 500;
+                        letter-spacing: 1px;
+                        line-height: 125%; /* 40/32 */
+
+                        &:not(:last-child) {
+                          margin-bottom: 40px;
+                        }
+
+                        span {
+                          color: #4475f2;
+                        }
+                      }
+                      .services__text {
+                        p {
+                          font-weight: 500;
+                          line-height: 187.5%; /* 30/16 */
+                          color: #5e6282;
+                          font-size: 16px;
+
+                          &:not(:last-child) {
+                            margin-bottom: 15px;
+                          }
+                        }
+                      }
+                    }
+                  }
+                  .services__image {
+                    flex: 1 1 250px;
+
+                    .services__picture {
+                      box-shadow: 0 30px 60px 0 rgba(71, 74, 87, 0.25);
+                      border-radius: 10px 10px 10px 10px;
+                      max-width: 100%;
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+
+        // REVIEWS
+
+        .page__reviews {
+          margin-bottom: 200px;
+
+          &.reviews {
+            .reviews__container {
+              .reviews__body {
+                .reviews__items {
+                  display: flex;
+                  gap: 50px;
+                  flex-wrap: wrap;
+
+                  .reviews__item {
+                    flex: 1 1 360px;
+                    box-shadow: 0 2.767256498336792px 2.2138051986694336px 0
+                        rgba(0, 0, 0, 0.02),
+                      0 6.650102138519287px 5.32008171081543px 0
+                        rgba(0, 0, 0, 0.03),
+                      0 12.521552085876465px 10.017241477966309px 0
+                        rgba(0, 0, 0, 0.04),
+                      0 22.3363094329834px 17.869047164916992px 0
+                        rgba(0, 0, 0, 0.04),
+                      0 41.777610778808594px 33.422088623046875px 0
+                        rgba(0, 0, 0, 0.05),
+                      0 100px 80px 0 rgba(0, 0, 0, 0.07);
+                    border: 1px solid #dedede;
+                    padding: 40px;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    text-align: center;
+
+                    font-size: 16px;
+                    font-weight: 500;
+                    line-height: 30px;
+                    letter-spacing: 0.2px;
+
+                    & > * {
+                      margin-bottom: 15px;
+
+                      &:last-child {
+                        margin-bottom: 0;
+                      }
+                    }
+
+                    .reviews__link-avatar {
+                      width: 150px;
+                      height: 150px;
+                      border-radius: 50%;
+                      overflow: hidden;
+                      margin-bottom: 30px;
+
+                      .reviews__avatar {
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover;
+                      }
+                    }
+                    .reviews__text {
+                      margin-bottom: 25px;
+                      flex-grow: 1;
+
+                      color: #5e6282;
+
+                      p {
+                        max-width: 250px;
+
+                        &:not(:last-child) {
+                          margin-bottom: 10px;
+                        }
+                      }
+                    }
+                    .reviews__title {
+                      color: #23a6f0;
+                      font-size: 16px;
+
+                      &:hover {
+                        text-decoration: underline;
+                      }
+
+                      .reviews__link-title {
+                      }
+                    }
+                    .reviews__position {
+                      color: #181e4b;
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+
+        // GOOGLE MAPS
+
+        .page__location {
+          margin-bottom: 240px;
+
+          &.location {
+            .location__container {
+              .location__map {
+                width: 100%;
+                max-height: 400px;
+                box-shadow: 0 30px 60px 0 rgba(71, 74, 87, 0.25);
+              }
+            }
+          }
+        }
+
+        // Components
+        .header-block {
+          font-weight: 800;
+
+          &.header-block--margin {
+            margin-bottom: 90px;
+          }
+
+          .header-block__label {
+            font-size: 18px;
+            letter-spacing: 2px;
+            color: #4475f2;
+            line-height: 127.7%; //  23/18*100% поділив висоту блочка з тим текстом на розмір шрифта font-size: 18px; і помножив на 100%
+            text-transform: uppercase;
+
+            &:not(:last-child) {
+              margin-bottom: 10px;
+            }
+          }
+          .header-block__title {
+            line-height: 65px;
+            color: #000;
+            font-size: 48px;
+          }
+        }
+        // Components end
+      }
+    }
+
+    .footer {
+      .footer__body {
+        margin-bottom: 95px;
+
+        .footer__container {
+          display: flex;
+          justify-content: center;
+          column-gap: 100px;
+          row-gap: 20px;
+          flex-wrap: wrap;
+
+          .footer__item {
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+
+            .footer__title {
+              // flex-grow: 1;
+              color: #000;
+              font-size: 24px;
+              font-weight: 700;
+              margin-bottom: 25px;
+            }
+
+            .footer__logo {
+              max-width: 248px;
+            }
+
+            .footer__social {
+              &.social {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 17px;
+                height: 93px;
+                align-items: center;
+              }
+            }
+
+            .footer__link {
+              height: 93px;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              font-weight: 500;
+              color: #000;
+
+              &:hover {
+                text-decoration: underline;
+              }
+            }
+          }
+        }
+      }
+
+      .footer__copy {
+        text-align: center;
+        color: #fff;
+        background-color: #4475f2;
+        padding: 50px 15px;
+      }
+    }
+  }
+}

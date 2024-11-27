@@ -1,0 +1,14 @@
+@use "./reset";
+@use "./fonts";
+@use "./home";
+@use "./responsive";
+
+// селектор атрибуту, в даному випадку по атрибуту class
+// застилізує всі класи що містять назву __container
+[class*="__container"] {
+  max-width: 1230px; // в мене обмежуючий контейтер є 1200px, я додав по 15px з ліва і з права,
+  // щоб при зменшенні екрану контент не приліпався до екрану
+  padding-right: 15px;
+  padding-left: 15px;
+  margin: 0 auto;
+}
