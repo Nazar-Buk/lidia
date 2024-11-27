@@ -383,7 +383,6 @@ body .wrapper > main.page .header-block .header-block__title {
 }
 body .wrapper .footer .footer__body {
   margin-bottom: 95px;
-  background: red;
 }
 body .wrapper .footer .footer__body .footer__container {
   display: flex;
