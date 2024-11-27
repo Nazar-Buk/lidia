@@ -24,29 +24,6 @@
 
   .page__features.features {
     margin-bottom: 100px;
-
-    .features__container {
-      .features__header-block.header-block {
-        .header-block__label {
-        }
-        .header-block__title {
-        }
-      }
-
-      .features__items {
-        .feature__item {
-          .feature__icon {
-            img {
-            }
-          }
-
-          .features__title {
-          }
-          .feature__text {
-          }
-        }
-      }
-    }
   }
   // SERVICES
 
@@ -55,48 +32,8 @@
 
     &.services {
       .services__container {
-        .services-header-block {
-          &.header-block {
-            .header-block__label {
-            }
-            .header-block__title {
-            }
-          }
-        }
-
         .services__items {
           gap: 100px;
-
-          .services__item {
-            &:nth-child(odd) {
-              .services__content {
-                .services__body {
-                }
-              }
-            }
-
-            .services__content {
-              .services__body {
-                .services__title {
-                  &:not(:last-child) {
-                  }
-
-                  span {
-                  }
-                }
-                .services__text {
-                  p {
-                    &:not(:last-child) {
-                    }
-                  }
-                }
-              }
-            }
-            .services__image {
-              .services__picture {
-              }
-            }
-          }
         }
       }
     }
@@ -105,29 +42,6 @@
   .footer {
     .footer__body {
       margin-bottom: 70px;
-
-      .footer__container {
-        .footer__item {
-          .footer__title {
-          }
-
-          .footer__logo {
-          }
-
-          .footer__social {
-            &.social {
-            }
-          }
-
-          .footer__link {
-            &:hover {
-            }
-          }
-        }
-      }
-    }
-
-    .footer__copy {
     }
   }
 }
@@ -182,20 +96,6 @@
               font-size: 32px;
             }
           }
-
-          .features__items {
-            .feature__item {
-              .feature__icon {
-                img {
-                }
-              }
-
-              .features__title {
-              }
-              .feature__text {
-              }
-            }
-          }
         }
       }
       // SERVICES
@@ -205,48 +105,8 @@
 
         &.services {
           .services__container {
-            .services-header-block {
-              &.header-block {
-                .header-block__label {
-                }
-                .header-block__title {
-                }
-              }
-            }
-
             .services__items {
               gap: 70px;
-
-              .services__item {
-                &:nth-child(odd) {
-                  .services__content {
-                    .services__body {
-                    }
-                  }
-                }
-
-                .services__content {
-                  .services__body {
-                    .services__title {
-                      &:not(:last-child) {
-                      }
-
-                      span {
-                      }
-                    }
-                    .services__text {
-                      p {
-                        &:not(:last-child) {
-                        }
-                      }
-                    }
-                  }
-                }
-                .services__image {
-                  .services__picture {
-                  }
-                }
-              }
             }
           }
         }
@@ -256,29 +116,6 @@
     .footer {
       .footer__body {
         margin-bottom: 50px;
-
-        .footer__container {
-          .footer__item {
-            .footer__title {
-            }
-
-            .footer__logo {
-            }
-
-            .footer__social {
-              &.social {
-              }
-            }
-
-            .footer__link {
-              &:hover {
-              }
-            }
-          }
-        }
-      }
-
-      .footer__copy {
       }
     }
   }
@@ -312,29 +149,6 @@
 
       .page__features.features {
         margin-bottom: 40px;
-
-        .features__container {
-          .features__header-block.header-block {
-            .header-block__label {
-            }
-            .header-block__title {
-            }
-          }
-
-          .features__items {
-            .feature__item {
-              .feature__icon {
-                img {
-                }
-              }
-
-              .features__title {
-              }
-              .feature__text {
-              }
-            }
-          }
-        }
       }
       // SERVICES
 
@@ -343,27 +157,11 @@
 
         &.services {
           .services__container {
-            .services-header-block {
-              &.header-block {
-                .header-block__label {
-                }
-                .header-block__title {
-                }
-              }
-            }
-
             .services__items {
               gap: 40px;
 
               .services__item {
                 flex-direction: column;
-
-                &:nth-child(odd) {
-                  .services__content {
-                    .services__body {
-                    }
-                  }
-                }
 
                 .services__content {
                   .services__body {
@@ -373,23 +171,11 @@
                       &:not(:last-child) {
                         margin-bottom: 20px;
                       }
-
-                      span {
-                      }
-                    }
-                    .services__text {
-                      p {
-                        &:not(:last-child) {
-                        }
-                      }
                     }
                   }
                 }
                 .services__image {
                   text-align: center;
-
-                  .services__picture {
-                  }
                 }
               }
             }
@@ -401,29 +187,6 @@
     .footer {
       .footer__body {
         margin-bottom: 30px;
-
-        .footer__container {
-          .footer__item {
-            .footer__title {
-            }
-
-            .footer__logo {
-            }
-
-            .footer__social {
-              &.social {
-              }
-            }
-
-            .footer__link {
-              &:hover {
-              }
-            }
-          }
-        }
-      }
-
-      .footer__copy {
       }
     }
   }
@@ -442,8 +205,6 @@
         .header__logo {
           flex: 0 0 auto;
           max-width: 150px;
-          img {
-          }
         }
 
         .header__menu.menu {
@@ -451,8 +212,6 @@
             .menu__item {
               .menu__link {
                 font-size: 18px;
-                &:hover {
-                }
               }
             }
           }
@@ -485,107 +244,11 @@
 
       .page__features.features {
         margin-bottom: 200px;
-
-        .features__container {
-          .features__header-block.header-block {
-            .header-block__label {
-            }
-            .header-block__title {
-            }
-          }
-
-          .features__items {
-            .feature__item {
-              .feature__icon {
-                img {
-                }
-              }
-
-              .features__title {
-              }
-              .feature__text {
-              }
-            }
-          }
-        }
       }
       // SERVICES
 
       .page__services {
         margin-bottom: 40px;
-
-        &.services {
-          .services__container {
-            .services-header-block {
-              &.header-block {
-                .header-block__label {
-                }
-                .header-block__title {
-                }
-              }
-            }
-
-            .services__items {
-              .services__item {
-                &:nth-child(odd) {
-                  .services__content {
-                    .services__body {
-                    }
-                  }
-                }
-
-                .services__content {
-                  .services__body {
-                    .services__title {
-                      &:not(:last-child) {
-                      }
-
-                      span {
-                      }
-                    }
-                    .services__text {
-                      p {
-                        &:not(:last-child) {
-                        }
-                      }
-                    }
-                  }
-                }
-                .services__image {
-                  .services__picture {
-                  }
-                }
-              }
-            }
-          }
-        }
-      }
-    }
-
-    .footer {
-      .footer__body {
-        .footer__container {
-          .footer__item {
-            .footer__title {
-            }
-
-            .footer__logo {
-            }
-
-            .footer__social {
-              &.social {
-              }
-            }
-
-            .footer__link {
-              &:hover {
-              }
-            }
-          }
-        }
-      }
-
-      .footer__copy {
       }
     }
   }
@@ -594,49 +257,11 @@
 @media (min-width: 768px) {
   body .wrapper {
     main.page {
-      .page__hero {
-        &.hero {
-        }
-      }
-
-      .page__features.features {
-        .features__container {
-          .features__header-block.header-block {
-            .header-block__label {
-            }
-            .header-block__title {
-            }
-          }
-
-          .features__items {
-            .feature__item {
-              .feature__icon {
-                img {
-                }
-              }
-
-              .features__title {
-              }
-              .feature__text {
-              }
-            }
-          }
-        }
-      }
       // SERVICES
 
       .page__services {
         &.services {
           .services__container {
-            .services-header-block {
-              &.header-block {
-                .header-block__label {
-                }
-                .header-block__title {
-                }
-              }
-            }
-
             .services__items {
               .services__item {
                 align-items: flex-start; // щоб зображення не розтягувало якщо тексту буде забагато
@@ -649,28 +274,6 @@
                       max-width: 420px;
                       margin: 0 0 0 auto;
                     }
-                  }
-                }
-
-                .services__content {
-                  .services__body {
-                    .services__title {
-                      &:not(:last-child) {
-                      }
-
-                      span {
-                      }
-                    }
-                    .services__text {
-                      p {
-                        &:not(:last-child) {
-                        }
-                      }
-                    }
-                  }
-                }
-                .services__image {
-                  .services__picture {
                   }
                 }
               }
